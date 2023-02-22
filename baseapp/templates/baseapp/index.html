@@ -1,0 +1,70 @@
+{% extends 'baseapp/base.html' %}
+
+{% load static %}
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+    crossorigin="anonymous"></script>
+{% endblock header %}
+{% block content %}
+<div>
+<section class="aboutsection">
+    <div class="aboutdiv">
+        <div class="left">
+            <h3>Welcome to Techietoxpress</h3>
+        <p>My name is Christian Eze and I will love to help you get the much needed software development  skills with pragmatic approach. I created this site to freely share my knowledge and skills with as many as possible. And so feel free to reach me for any professional help you may need in your programming career.
+            Techietoxpress contains dozens of tutorials, courses, books and videos on various topics. If you need some personal coaching from me, please click the button below. Also feel free to learn about my activities using any of the links.</p>
+            <button style="background-color:#CBAAAA;color:white;">Book for Consulting</button>
+        </div>
+<div class="right">
+
+    <img src="{% static 'images/landingpagekcimageframe.png' %}" alt="">
+</div>
+    </div>
+
+</section>
+<section class="trendingpost">
+<div class="trendingpostdiv">
+    <h2 class="centertitle">Trending Courses</h2>
+<div class="tutorialimagesdiv">
+    <a href="">
+        <div class="imagediv">
+            <img src="{% static 'images/pythontutorialframe.png' %}" alt="">
+            <p>Mastering Python to solve Daily Problems</p>
+        </div>
+       
+    </a>
+    
+    <a href="">
+        <div class="imagediv">
+            <img src="{% static 'images/djangotutorialframe.png' %}" alt="">
+        <p>Mastering Django for Web development</p>
+        </div>
+        
+    </a>
+    
+    <a href="">
+        <div class="imagediv">
+            <img src="{% static 'images/fluttertutorialframe.png' %}" alt="">
+            <p>Resilient Flutter Developer</p>
+        </div>
+
+    </a>
+    
+</div>
+
+</div>
+</section>
+<section class="recentpost">
+<div class="trendingpostdiv">
+    <h2 class="centertitle">Recent Writeups and Resources</h2>
+    <p class="tutorialarticle">Introduction Video to my Blog                      Time : 3:00pm               No of views     No of likes</p>
+    <p class="tutorialarticle">Introduction to programming                        Time : 3:00pm               No of views     No of likes</p>
+    <p class="tutorialarticle">Introduction to Python Programming        Time : 3:00pm               No of views     No of likes</p>
+
+</div>
+</section>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+    crossorigin="anonymous"></script>
+</div>
+{% endblock content %}

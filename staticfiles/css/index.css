@@ -1,0 +1,115 @@
+.aboutsection{
+    padding: 1rem;
+}
+
+.aboutdiv{
+    display: flex;
+    flex-direction: row;
+   
+    margin-left: 1rem;
+    margin-right: 1rem;
+ 
+
+}
+.aboutdiv .left h2{
+    width: 30%;
+}
+
+.aboutdiv .right{
+    width: 50%;
+} 
+.aboutdiv img{
+    width: 30vw;
+    height: 70vh;
+    margin-left: 1rem;
+}
+.tutorialimagesdiv{
+    display: flex;
+    flex-direction: row;
+    
+}
+.tutorialimagesdiv a{
+    
+    margin: 1rem auto;
+    text-decoration: none;
+    color:black;
+    font-style: italic;
+    justify-content: center;
+}
+p.tutorialarticle{
+    margin-left: 2rem;
+}
+
+h2.centertitle{
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 900px){
+    .tutorialimagesdiv{
+        display: block;
+        
+        align-items: center;
+    }
+   
+    .tutorialimagesdiv a div.imagediv{
+        display: block;
+        width: 40%;
+        /* border: 2px solid rgb(51, 35, 225); */
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tutorialimagesdiv a div.imagediv img{
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+    
+}
+
+@media only screen and (max-width: 1200px){
+    .tutorialimagesdiv{
+        display: block;
+        
+        align-items: center;
+    }
+    .tutorialimagesdiv a div.imagediv{
+        display: block;
+        width: 60%;
+        /* border: 2px solid rgb(51, 35, 225); */
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tutorialimagesdiv a div.imagediv img{
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+   .aboutdiv{
+    display: block;
+    /* border: 2px solid green; */
+   } 
+   .aboutdiv .left h2{
+    width: 100%;
+}
+   .aboutdiv .left h2{
+    width: 30%;
+}
+
+.aboutdiv .right{
+    width: 100%;
+} 
+.aboutdiv img{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    
+}
+
+}
