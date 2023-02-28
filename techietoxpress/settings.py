@@ -20,6 +20,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 # api token
 # UCZ63GJ6BUJFGL665OF6UQAQRXP9MMH6
+# force hardorigin
+# git reset --hard origin/master
 
 # https://oauth2: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@github.com/christiankelechi/techietoxpress.git
 from pathlib import Path
@@ -92,12 +94,12 @@ WSGI_APPLICATION = 'techietoxpress.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # development
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 # deployment stage
 DATABASES = {
     'default': {
