@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 # github token
 # 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
-
+# order
+# 5338177865
+# root password
+# zvU5li63X03QBK0iCp
+# 
 # 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
 
 # api token
@@ -35,7 +39,7 @@ SECRET_KEY = 'django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x
 # DEBUG = True
 # prod mode
 DEBUG=False
-ALLOWED_HOSTS = ['techietoxpress.com','localhost']
+ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','142.11.195.156','localhost']
 
 
 # Application definition
@@ -48,7 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'baseapp',
-    'blog'
+    'blog',
+
 ]
 
 MIDDLEWARE = [
@@ -59,7 +64,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  
 ]
+
 
 ROOT_URLCONF = 'techietoxpress.urls'
 
@@ -85,20 +92,20 @@ WSGI_APPLICATION = 'techietoxpress.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # development
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 # deployment stage
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'codenxdm_techietoxpressdb',
-        'USER':'codenxdm_techietoxpressadmin',
+        'ENGINE': 'django.db.backends.psycopg2',
+        'NAME': 'techietoxpressdb',
+        'USER':'techietoxpressdbuser',
         'PASSWORD':'Kelechi1999!',
-        'PORT':'3306',
+        'PORT':'',
         'HOST':'localhost'
     }
 }
@@ -140,9 +147,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 # dev stage
-# STATICFILES_DIRS=[os.path.join(BASE_DIR,'staticfiles'),]
+# STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'),]
 # production stage
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

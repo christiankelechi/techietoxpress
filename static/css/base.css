@@ -141,6 +141,6 @@ footer div ul li a{
     margin-bottom: 2rem;
     text-decoration: none;
     margin-left: -1.8rem;
-    border: 2px solid white;
+    /* border: 2px solid white; */
 }
 }
