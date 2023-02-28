@@ -108,7 +108,7 @@ DATABASES = {
         'USER':'techietoxpressdbuser',
         'PASSWORD':'Kelechi1999!',
         'PORT':'',
-        'HOST':'localhost'
+        'HOST':'localhost',d
     }
 }
 
