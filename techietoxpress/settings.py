@@ -18,6 +18,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # 
 # 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
 
+# zlibprivate
+# https://lib-2psgh23zwzqoccg5gawqz7yi.b-ok.africa/
+
 # api token
 # UCZ63GJ6BUJFGL665OF6UQAQRXP9MMH6
 # force hardorigin
@@ -55,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'baseapp',
     'blog',
+    'cpa',
     'whitenoise',
 
 ]
@@ -83,7 +87,7 @@ ROOT_URLCONF = 'techietoxpress.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'baseapp/templates')],
+        'DIRS': [os.path.join(BASE_DIR,'baseapp/templates'),os.path.join(BASE_DIR,'cpa/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -161,9 +165,9 @@ USE_TZ = True
 # production stage
 STATIC_URL = "/static/"
 
-# STATIC_ROOT=os.path.join(BASE_DIR,'static')
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
 # Note: Replace 'supersecure.codes' with your domain
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# STATIC_ROOT = '/root/techietoxpress/static'
 # STATICFILES_DIRS = [BASE_DIR / "static"]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -49,16 +49,17 @@ h2.centertitle{
     .tutorialimagesdiv{
         display: block;
         
-        align-items: center;
+        
     }
    
     .tutorialimagesdiv a div.imagediv{
         display: block;
-        width: 40%;
+        width: 30%;
         /* border: 2px solid rgb(51, 35, 225); */
+        padding-left: 5rem;
+        padding-right: 5rem;
         justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
+        
     }
     .tutorialimagesdiv a div.imagediv img{
         width: 100%;
@@ -78,6 +79,8 @@ h2.centertitle{
         display: block;
         width: 60%;
         /* border: 2px solid rgb(51, 35, 225); */
+        padding-left: 8rem;
+        padding-right: 8rem;
         justify-content: center;
         margin-left: auto;
         margin-right: auto;
@@ -94,6 +97,7 @@ h2.centertitle{
    .aboutdiv{
     display: block;
     /* border: 2px solid green; */
+    /* border:3px solid red; */
    } 
    .aboutdiv .left h2{
     width: 100%;
@@ -104,11 +108,15 @@ h2.centertitle{
 
 .aboutdiv .right{
     width: 100%;
+    display: flex;
+    /* border: 3px solid green; */
+    justify-content: center;
 } 
 .aboutdiv img{
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
+    width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 18rem;
     
 }
 

@@ -20,5 +20,6 @@ from . import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('baseapp.urls')),
+    path('cpa/',include('cpa.urls')),
 ]
 
