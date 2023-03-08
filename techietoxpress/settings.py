@@ -20,7 +20,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 # zlibprivate
 # https://lib-2psgh23zwzqoccg5gawqz7yi.b-ok.africa/
-
+# http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion 
 # api token
 # UCZ63GJ6BUJFGL665OF6UQAQRXP9MMH6
 # force hardorigin
@@ -31,7 +31,8 @@ from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# customer support pin
+# 2338
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -44,7 +45,7 @@ SECRET_KEY = 'django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x
 # DEBUG = True
 # prod mode
 DEBUG=False
-ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','142.11.195.156','localhost']
+ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','18.118.16.45','localhost']
 
 
 # Application definition
