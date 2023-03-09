@@ -21,6 +21,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # zlibprivate
 # https://lib-2psgh23zwzqoccg5gawqz7yi.b-ok.africa/
 # http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion 
+
+# SCHOOL EMAIL
+# https://lib-5qypikoizxtbygpntlrx4fgs.1lib.ch
+# https://lib-4e3xrdbuf22trlbed3lqrtug.1lib.fr
 # api token
 # UCZ63GJ6BUJFGL665OF6UQAQRXP9MMH6
 # force hardorigin
@@ -60,7 +64,7 @@ INSTALLED_APPS = [
     'baseapp',
     'blog',
     'cpa',
-    'whitenoise',
+    'whitenoise.runserver_nostatic',
 
 ]
 
@@ -88,7 +92,7 @@ ROOT_URLCONF = 'techietoxpress.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'baseapp/templates'),os.path.join(BASE_DIR,'cpa/templates')],
+        'DIRS': [os.path.join(BASE_DIR,'baseapp/templates'),os.path.join(BASE_DIR,'cpa/templates'),os.path.join(BASE_DIR,'blog/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

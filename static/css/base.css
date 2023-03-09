@@ -46,7 +46,7 @@ footer div ul li a{
     display: block;
 }
 footer{
-    height: 85vh;
+    height: 80vh;
     display: block;
     background-color:#2F526F;
     justify-content: space-between;
@@ -82,7 +82,7 @@ footer div ul li a{
         display: block;
     }
     footer{
-        height: 85vh;
+        height: 70vh;
         display: block;
         background-color:#2F526F;
         justify-content: space-between;
