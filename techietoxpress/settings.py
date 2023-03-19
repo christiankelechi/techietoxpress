@@ -19,6 +19,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # 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
 
 # zlibprivate
+# https://lib-rqoaiwgrrvo3oehzvym5uu5r.booksc.eu
 # https://lib-2psgh23zwzqoccg5gawqz7yi.b-ok.africa/
 # http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion 
 
@@ -65,7 +66,8 @@ INSTALLED_APPS = [
     'blog',
     'cpa',
     'whitenoise.runserver_nostatic',
-
+    # thirdparty app
+    'taggit'
 ]
 
 
