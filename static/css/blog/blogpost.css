@@ -1,6 +1,6 @@
 div.blogpost_parent{
     background-color: white;
-    height: 100vh;
+    margin-bottom: 2rem;
 }
 div.blogpost_parent h2{
     text-align: center;
@@ -14,8 +14,9 @@ div.blogpost_parent section.blogpost_section ul.postnav li{
     list-style: none;
 }
 div.blogpost_parent section.blogpost_section p{
-    padding: 1rem;
-    word-wrap: break-word;
+text-align: justify;
+margin-left: 1rem;
+margin-right: 1rem;
 }
 @media only screen and (max-width: 900px){
     div.blogpost_parent section.blogpost_section ul.postnav{

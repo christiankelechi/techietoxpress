@@ -16,6 +16,7 @@
     background-color: #D9D9D9;
 }
 footer{
+    margin-top: 2rem;
     display: flex;
     background-color:#2F526F;
     justify-content: space-between;
