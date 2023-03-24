@@ -23,6 +23,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # https://lib-2psgh23zwzqoccg5gawqz7yi.b-ok.africa/
 # http://bookszlibb74ugqojhzhg2a63w5i2atv5bqarulgczawnbmsb6s6qead.onion 
 
+# blockchainkey
+# KJMFCSBP2EOF5EUP
+
 # SCHOOL EMAIL
 # https://lib-5qypikoizxtbygpntlrx4fgs.1lib.ch
 # https://lib-4e3xrdbuf22trlbed3lqrtug.1lib.fr

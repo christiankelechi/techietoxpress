@@ -4,9 +4,12 @@ from .forms import CommentForm
 from taggit.models import Tag
 from django.db.models import Count
 from django.contrib.postgres.search import TrigramSimilarity
+from .models import Post,Comment
 # Create your views here.
 def postlist(request):
-    return  render(request,'blog/postlist.html')
+    posts=Post.objects.all()
+    context={'posts':posts}
+    return  render(request,'blog/postlist.html',context)
 
 def post_detail(request,year,month,day,post):
     post=get_list_or_404(Post,status=Post.Status.PUBLISHED,slug=post,publish__year=year,publish__month=month,publish__day=day)
