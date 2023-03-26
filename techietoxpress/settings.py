@@ -53,7 +53,7 @@ SECRET_KEY = 'django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x
 # DEBUG = True
 # prod mode
 DEBUG=False
-ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','18.118.16.45','localhost']
+ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','localhost']
 
 
 # Application definition

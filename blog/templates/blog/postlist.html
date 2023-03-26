@@ -9,15 +9,25 @@
 <div class="blogpost_parent">
     <section class="blogpost_section">
 <h2>Welcome to Techietoxpress Blog</h2>
+{% for uniquepost in posts %}
 <ul class="postnav">
-    <li>Posted by: CHRISTIAN EZE</li>
+    <li>Published by: {{uniquepost.author}}</li>
     <li>Time: 2:00</li>
     <li>Category :Programming</li>
 </ul>
-{% for uniquepost in posts %}
-<p>{{uniquepost.title}}</p>
-<p>{{uniquepost.body|linebreaks}}</p>
-{% endfor %}
+
+
+    <a style="text-decoration: none;color:black;" href="{{ uniquepost.get_absolute_url }}">
+        <h2>{{uniquepost.title}}
+        </h2>
+    </a>
+
+<a style="text-decoration: none;color:black;font-size: 1.5rem;" href="{{ uniquepost.get_absolute_url }}">
+    <p>
+    {{uniquepost.body|linebreaks|truncatewords:50}}</p>
+    
+</a>
+{% endfor %} 
     </section>
 </div>
 
