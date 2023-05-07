@@ -16,7 +16,12 @@ WORKDIR /techietoxpress
 
 RUN python -m venv /venv && \
     /venv/bin/pip install --upgrade pip && \
-    /venv/bin/pip install -r /requirements.txt
+    apk add --update --no-cache postgresql-client && \
+    apk add --update --no-cahche --virtual .tmp-deps \
+    build-base postgresql-dev musl-dev && \
+    /venv/bin/pip install -r /requirements.txt && \
+    apk del .tmp-deps && \
+    adduser --disabled-password --no-create-home techietoxpress
 
 ENV PATH ="/venv/bin:$PATH"
 

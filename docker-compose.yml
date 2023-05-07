@@ -7,3 +7,20 @@ services:
       - 8000:8000
     volumes:
       - ./techietoxpress:/techietoxpress
+    environment:
+      - SECRET_KEY="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
+      - DEBUG=1
+      - DB_HOST=db
+      - DB_NAME=techietoxpressdb
+      - DB_USER=techietoxpressdbuser
+      - DB_PASS='Kelechi1999!'
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13-alpine
+    environment:
+      - POSTGRES_DB=techietoxpressdb
+      - POSTGRES_USER=techietoxpressdbuser
+      - POSTGRES_PASSWORD='Kelechi1999!'
+  

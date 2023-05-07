@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+
+'''docker settings'''
+# writing image sha256:7e27deebff76ef88a9b9f93bde521
+# naming to docker.io/library/techietoxpress_techiet 
+'''end of docker settings'''
 # github token
 # https://facebook.com@is.gd/7RI8GM
 # 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
@@ -48,13 +53,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x'
+# secret key: django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # dev mode
 # DEBUG = True
 # prod mode
-DEBUG=False
+DEBUG=bool(int(os.environ.get('DEBUG',0)))
+
+
+
 ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','localhost']
 
 
@@ -118,10 +127,20 @@ WSGI_APPLICATION = 'techietoxpress.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # development
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('DB_HOST'),
+        'NAME':os.environ.get('DB_NAME'),
+        'USER':os.environ.get('DB_USER'),
+        'PASSWORD':os.environ.get('DB_PASS')
     }
 }
 
