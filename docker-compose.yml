@@ -11,8 +11,8 @@ services:
       - SECRET_KEY="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
       - DEBUG=1
       - DB_HOST=db
-      - DB_NAME=techietoxpressdb
-      - DB_USER=techietoxpressdbuser
+      - DB_NAME=techietoxpressdatabase
+      - DB_USER=kc
       - DB_PASS='Kelechi1999!'
     depends_on:
       - db
@@ -20,7 +20,7 @@ services:
   db:
     image: postgres:13-alpine
     environment:
-      - POSTGRES_DB=techietoxpressdb
-      - POSTGRES_USER=techietoxpressdbuser
+      - POSTGRES_DB=techietoxpressdatabase
+      - POSTGRES_USER=kc
       - POSTGRES_PASSWORD='Kelechi1999!'
   
