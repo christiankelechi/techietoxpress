@@ -1,0 +1,42 @@
+{% extends 'cpa/basecpa.html' %}
+
+{% load static %}
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+    crossorigin="anonymous"></script>
+{% endblock header %}
+{% block content %}
+<div>
+<section class="aboutsection">
+    <div class="aboutdiv">
+        <div class="left">
+            <h3>Signin View</h3>
+        
+            
+            <form action="{% url 'cpa:signin' %}" method="post">
+                {% csrf_token %}
+                
+                <label for="">Username:</label><br><br>
+                <input type="text" name="username"><br><br>
+                <label for="">Password:</label><br><br>
+                <input type="password" name="password"><br><br>
+                
+                <input type="submit" value="signin">
+            </form>
+        </div>
+        <h2>No of times shared : {{increment}}</h2>
+<div class="right">
+
+
+</div>
+    </div>
+
+</section>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+    crossorigin="anonymous"></script>
+</div>
+{% endblock content %}

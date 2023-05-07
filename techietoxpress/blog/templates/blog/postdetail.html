@@ -1,0 +1,23 @@
+{% extends 'baseapp/base.html' %}
+{% load static %}
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/blog/blogpost.css' %}">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+    crossorigin="anonymous"></script>
+{% endblock header %}
+{% block content %}
+<div class="blogpost_parent">
+    <section class="blogpost_section">
+<h2>Welcome to Techietoxpress Blog</h2>
+<ul class="postnav">
+    <li>Published by: {{post.author}}</li>
+    <li>Time: 2:00</li>
+    <li>Category :Programming</li>
+</ul>
+
+<h2>{{post.title}}</h1>
+<p>{{post.body|linebreaks}}</p>
+    </section>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techietoxpress</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+    crossorigin="anonymous"></script>
+    {% block header %}
+
+    {% endblock header %}
+</head>
+<body>
+    <div class="generalheaderdiv">
+
+    </div>
+    <div class="siteheader">
+      <a href="{% url 'index' %}">
+        <img class="sitelogo" src="{% static 'images/techietoxpresslogo.png' %}" alt="">
+      </a>
+    
+    <h2 class="sitemoto">Platform for Pragmatic software approach solutions</h2>
+    </div>
+    <header class="header" style="background-color:#D9D9D9;">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog:list' %}">Blogs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Videos</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Publications
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Java</a></li>
+                      <li><a class="dropdown-item" href="#">Python</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Django</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Archive</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+{% block content %}
+
+{% endblock content %}
+<footer>
+  <div>
+    <h2>ABOUT US</h2>
+    <ul>
+      <li><a href="">support@techietoxpress.com</a></li>
+      <li><a href="">+2348082182438</a></li>
+    </ul>
+  </div>
+  <div>
+    <h2> TRENDING VIDEOS </h2>
+ <ul>
+  <li><a href="">Daily Python guides</a></li>
+  <li><a href="">Django guide</a></li>
+ </ul>
+  </div>
+  <div>
+    <h2> PUBLICATIONS </h2>
+    <ul>
+     <li><a href="">Python articles</a></li>
+     <li><a href="">Django articles</a></li>
+    </ul>
+  </div>
+  <div>
+  <h2>HOW TO DO</h2>
+  <ul>
+    <li><a href="">Daily problem solving</a></li>
+  </ul>
+  </div>
+</footer>
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+    crossorigin="anonymous"></script>
+</body>
+</html>

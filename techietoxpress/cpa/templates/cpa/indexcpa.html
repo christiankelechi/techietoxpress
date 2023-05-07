@@ -1,0 +1,44 @@
+{% extends 'cpa/basecpa.html' %}
+
+{% load static %}
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+    crossorigin="anonymous"></script>
+{% endblock header %}
+{% block content %}
+<div>
+<section class="aboutsection">
+    <div class="aboutdiv">
+        <div class="left">
+            <h3>Walter Chiagoziem CPA Offer</h3>
+        <p>My name is Chiagoziem Walter and I will like to provide you with an offer once you share this link below to 5 watsapp group.</p>
+
+        <form action="{% url 'cpa:index' %}" method="post">
+            <button type="submit">
+                <a href="https://api.whatsapp.com/send?text=www.codeblazeacademy.net" data-action="share/whatsapp/share">Share via Whatsap</a>
+            </button>
+            
+        </form>
+        
+        </div>
+        <br><br>
+        
+<div class="right">
+
+
+</div>
+    </div>
+    <h2>Name : {{request.user.username}}</h2>
+    {% if user.is_authenticated %}
+    <h2>No of times shared : </h2>
+    {% else %}
+    <h2>No of times shared : {{currentuser}}</h2>
+    {% endif %}
+</section>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4455285389124524"
+    crossorigin="anonymous"></script>
+</div>
+{% endblock content %}

@@ -1,0 +1,9 @@
+.git
+.gitignore
+.docker
+venv/
+.venv/
+.env/
+techietoxpress/techietoxpress/__pycache__/
+
+data/
