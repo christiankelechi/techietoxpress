@@ -133,14 +133,14 @@ WSGI_APPLICATION = 'techietoxpress.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': os.environ.get('DB_HOST'),
-        'NAME':os.environ.get('DB_NAME'),
-        'USER':os.environ.get('DB_USER'),
-        'PASSWORD':os.environ.get('DB_PASS')
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'techietoxpressdatabase',
+        'USER':'techietoxpressdatabaseuser',
+        'PASSWORD':'Kelechi1999!',
+        'PORT':'',
+        'HOST':'localhost'
     }
 }
 
@@ -185,9 +185,12 @@ USE_TZ = True
 # dev stage
 # STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'),]
 # production stage
-STATIC_URL = "/static/"
+STATIC_URL = "/static/static/"
 
-STATIC_ROOT=os.path.join(BASE_DIR,'static')
+MEDIA_URL= "/static/media/"
+
+STATIC_ROOT='/vol/web/static'
+# STATIC_ROOT=os.path.join(BASE_DIR,'static')
 # Note: Replace 'supersecure.codes' with your domain
 # STATIC_ROOT = '/root/techietoxpress/static'
 # STATICFILES_DIRS = [BASE_DIR / "static"]

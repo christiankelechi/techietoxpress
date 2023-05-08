@@ -1,0 +1,31 @@
+
+services:
+  techietoxpress:
+    build:
+      context: .
+    ports:
+    restart: always
+
+      - 8000:8000
+    volumes:
+      - static-data:/vol/web
+    environment:
+      - SECRET_KEY="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
+      - DEBUG=1
+  proxy:
+    build:
+      context: ./proxy
+    restart: always
+    depends_on:
+      - techietoxpress
+    ports:
+      - 80:8000
+    volumes:
+      - static-data:/vol/static
+volumes:
+  static-data:
+
+      
+
+  
+  
