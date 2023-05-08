@@ -1,17 +1,16 @@
-
+version: '3.9'
 services:
   techietoxpress:
     build:
       context: .
-    ports:
-      - 8000:8000
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./techietoxpress:/techietoxpress
-      - ./data/web:/vol/web
+    ports:
+      - 8000:8000
     environment:
-      - SECRET_KEY="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
-      - DEBUG=1
-      
+      - DJANGO_DEBUG=1
+
 
   
   

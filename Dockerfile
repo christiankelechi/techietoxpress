@@ -3,30 +3,16 @@ LABEL maintainer="techietoxpress.com"
 
 ENV PYTHONNUNBUFFERED 1
 
-COPY ./requirements.txt /requirements.txt
-COPY ./techietoxpress /techietoxpress
-COPY ./scripts /scripts
+COPY requirements.txt /requirements.txt
+
+RUN apk add --upgrade --no-cache build-base linux-headers && \
+pip install --upgrade pip && \
+pip install -r /requirements.txt
+
+COPY techietoxpress/ /techietoxpress
 WORKDIR /techietoxpress
-EXPOSE 8000
 
+RUN adduser --disabled-password --no-create-home techietoxpressadminuser
+USER techietoxpressadminuser
 
-RUN python -m venv /venv && \
-    /venv/bin/pip install --upgrade pip && \
-    apk add --update --no-cache postgresql-client && \
-    apk add --update --no-cache --virtual .tmp-deps \
-        build-base postgresql-dev musl-dev linux-headers && \
-        /venv/bin/pip install -r /requirements.txt && \
-        apk del .tmp-deps && \
-        adduser --disabled-password --no-create-home techietoxpress && \
-        mkdir -p /vol/web/static && \
-        mkdir -p /vol/web/media && \
-        chown -R techietoxpress:techietoxpress /vol && \
-        chmod -R 755 /vol && \
-        chmod -R +x /scripts
-
-
-ENV PATH="/scripts:/venv/bin:$PATH"
-
-USER techietoxpress
-
-CMD ["run.sh"]
+CMD ["uwsgi","--socket",":9000","--workers","4","--master","--enabled-threads","--module","techietoxpress.wsgi"]

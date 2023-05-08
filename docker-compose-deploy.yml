@@ -1,26 +1,46 @@
-
+version: "3.9"
 services:
   techietoxpress:
     build:
       context: .
     restart: always
-    volumes:
-      - static-data:/vol/web
     environment:
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+      - DJANGO_ALLOWED_HOSTS=${DOMAIN}
       - SECRET_KEY="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
 
   proxy:
     build:
-      context: ./proxy
+      context: ./docker/proxy
     restart: always
     depends_on:
       - techietoxpress
     ports:
-      - 80:8000
+      - 80:80
+      - 443:443
     volumes:
-      - static-data:/vol/static
+      - certbot-web:/vol/www
+      - proxy-dhparams:/vol/proxy
+      - certbot-certs:/etc/letsencrypt
+    environment:
+      - DOMAIN=${DOMAIN}
+  cerbot:
+    build:
+      context: ./docker/certbot
+    command: echo "Skipping..."
+    environment:
+     - EMAIL=${ACME_DEFAULT_EMAIL}
+     - DOMAIN=${DOMAIN}
+    volumes:
+      - certbot-web:/vol/www
+      - certbot-certs:/etc/letsencrypt/
+    depends_on:
+      - proxy
+      
 volumes:
-  static-data:
+  certbot-web:
+  proxy-dhparams:
+  cerbot-certs:
 
       
 
