@@ -56,6 +56,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # secret key: django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x
 SECRET_KEY ="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
 
+''''''
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # dev mode
 # DEBUG = True
