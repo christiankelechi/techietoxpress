@@ -54,14 +54,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # secret key: django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY ="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # dev mode
 # DEBUG = True
 # prod mode
-DEBUG=bool(int(os.environ.get('DEBUG',0)))
-
+# DEBUG=bool(int(os.environ.get('DEBUG',0)))
+DEBUG=False
 
 
 ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','localhost']
