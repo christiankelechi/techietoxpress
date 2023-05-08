@@ -3,7 +3,7 @@ LABEL maintainer="techietoxpress.com"
 
 ENV PYTHONNUNBUFFERED 1
 
-COPY ./requirements.txt /requirements
+COPY ./requirements.txt /requirements.txt
 COPY ./techietoxpress /techietoxpress
 COPY ./scripts /scripts
 WORKDIR /techietoxpress
