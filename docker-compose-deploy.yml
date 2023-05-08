@@ -19,7 +19,6 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - certbot-web:/vol/www
       - proxy-dhparams:/vol/proxy
       - certbot-certs:/etc/letsencrypt
     environment:
