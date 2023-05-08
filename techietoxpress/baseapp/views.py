@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
+    mylist="mylist"
     return render(request,'baseapp/index.html')
 # import webbrowser
 # import pyautogui
