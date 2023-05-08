@@ -1,10 +1,10 @@
 FROM nginxinc/nginx-unprivileged:1-alpine
 LABEL maintainer="techietoxpress.com"
 
-COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
-COPY ./uwsgi_params /etc/nginx/uwsgi_params
+COPY ./proxy/default.conf.tpl /etc/nginx/default.conf.tpl
+COPY ./proxy/uwsgi_params /etc/nginx/uwsgi_params
 COPY ./scripts /scripts
-COPY ./run.sh /run.sh
+COPY ./scripts/run.sh /run.sh
 
 ENV LISTEN_PORT=8000
 ENV APP_HOST=techietoxpress
