@@ -18,6 +18,10 @@ services:
     ports:
       - 80:80
       - 443:443
+    volumes:
+      - certbot-web:/vol/www
+      - proxy-dhparams:/vol/proxy
+      - certbot-certs:/etc/letsencrypt
     environment:
       - DOMAIN=${DOMAIN}
   cerbot:
@@ -27,13 +31,16 @@ services:
     environment:
      - EMAIL=${ACME_DEFAULT_EMAIL}
      - DOMAIN=${DOMAIN}
+    volumes:
+      - certbot-web:/vol/www
+      - certbot-certs:/etc/letsencrypt/
     depends_on:
       - proxy
       
-# volumes:
-#   certbot-web:
-#   proxy-dhparams:
-#   cerbot-certs:
+volumes:
+  certbot-web:
+  proxy-dhparams:
+  cerbot-certs:
 
       
 
