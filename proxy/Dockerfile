@@ -28,9 +28,9 @@ RUN python -m venv /venv && \
         chmod -R +x /scripts
 
 
-VOLUME /vol/static
+ENV PATH="/scripts:/venv/bin:$PATH"
 
-USER nginx 
+USER techietoxpress
 
 CMD ["/run.sh"]
 
