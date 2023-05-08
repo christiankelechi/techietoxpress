@@ -37,10 +37,10 @@ services:
     depends_on:
       - proxy
       
-volumes:
-  certbot-web:
-  proxy-dhparams:
-  cerbot-certs:
+# volumes:
+#   certbot-web:
+#   proxy-dhparams:
+#   cerbot-certs:
 
       
 
