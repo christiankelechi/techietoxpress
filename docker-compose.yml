@@ -11,7 +11,7 @@ services:
 
   web:
     build: .
-    command: ["./wait-for-it.sh", "db:5432", "--",
+    command: ["db:5432", "--",
             "uwsgi", "--ini", "/techietoxpress/config/uwsgi/uwsgi.ini"]
     restart: always
     volumes:
