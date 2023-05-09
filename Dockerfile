@@ -9,6 +9,8 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /techietoxpress
 
 # Install dependencies
+RUN chown root /*.sh && \
+RUN chown root /var/run/root && \
 RUN pip install --upgrade pip
 COPY requirements.txt /techietoxpress/
 RUN pip install -r requirements.txt
