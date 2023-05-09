@@ -1,15 +1,40 @@
-version: '3.9'
 services:
-  techietoxpress:
-    build:
-      context: .
-    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+  db:
+    image: postgres:14.5
+    restart: always
     volumes:
-      - ./techietoxpress:/techietoxpress
-    ports:
-      - 8000:8000
+      - ./data/db:/var/lib/postgresql/data
     environment:
-      - DJANGO_DEBUG=1
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  web:
+    build: .
+    command: ["./wait-for-it.sh", "db:5432", "--",
+            "uwsgi", "--ini", "/techietoxpress/config/uwsgi/uwsgi.ini"]
+    restart: always
+    volumes:
+      - .:/techietoxpress
+    environment:
+      - DJANGO_SETTINGS_MODULE=techietoxpress.settings.prod
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
+      
+
+  
+  nginx:
+    image: nginx:1.23.1
+    restart: always
+    volumes:
+      - ./config/nginx:/etc/nginx/templates
+      - .:/techietoxpress
+    ports:
+      - "80:80"
+      - "443:443"
 
 
   

@@ -1,0 +1,25 @@
+upstream uwsgi_app {
+    server unix:/techietoxpress/techietoxpress/uwsgi_app.sock;
+}
+server {
+    listen 80;
+    server_name www.techietoxpress.com techietoxpress.com;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen  80;
+    server_name www.techietoxpress.com techietoxpress.com;
+    error_log stderr warn;
+    access_log /dev/stdout main;
+
+    location / {
+        include /etc/nginx/uwsgi_params;
+        uwsgi_pass uwsgi_app;
+    }
+    location /static/ {
+        alias /techietoxpress/techietoxpress/static/;
+    }
+    location /media/ {
+        alias /techietoxpress/techietoxpress/media/;
+ }
+}

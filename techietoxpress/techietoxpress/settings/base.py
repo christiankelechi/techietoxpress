@@ -45,7 +45,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # customer support pin
 # 2338
 
@@ -59,18 +59,18 @@ SECRET_KEY ="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
 # SECRET_KEY =os.environ.get('setmeinprod')
 
 
-
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','localhost']
 # SECURITY WARNING: don't run with debug turned on in production!
 # dev mode
 # DEBUG = True
 # prod mode
 # DEBUG=bool(int(os.environ.get('DEBUG',0)))
 # DEBUG=False
-DEBUG = bool(int(os.environ.get("DJANGO_DEBUG",0)))
+# DEBUG = bool(int(os.environ.get("DJANGO_DEBUG",0)))
 
 
-ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','localhost']
+
 
 # ALLOWED_HOSTS= [] if DEBUG else os.environ.get("DJANGO_ALLOWED_HOSTS").split(',')
 
@@ -142,16 +142,7 @@ WSGI_APPLICATION = 'techietoxpress.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'techietoxpressdatabase',
-        'USER':'techietoxpressdatabaseuser',
-        'PASSWORD':'Kelechi1999!',
-        'PORT':'',
-        'HOST':'localhost'
-    }
-}
+
 
 
 
@@ -194,12 +185,12 @@ USE_TZ = True
 # dev stage
 # STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'),]
 # production stage
-STATIC_URL = "/static/static/"
+STATIC_URL = "/static/"
 
-MEDIA_URL= "/static/media/"
-
-STATIC_ROOT='/vol/web/static'
-# STATIC_ROOT=os.path.join(BASE_DIR,'static')
+MEDIA_URL= "/media/"
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+# STATIC_ROOT='/vol/web/static'
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
 # Note: Replace 'supersecure.codes' with your domain
 # STATIC_ROOT = '/root/techietoxpress/static'
 # STATICFILES_DIRS = [BASE_DIR / "static"]

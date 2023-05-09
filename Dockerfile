@@ -1,18 +1,17 @@
-FROM python:3.11-alpine3.17
-LABEL maintainer="techietoxpress.com"
+# Pull official base Python Docker image
+FROM python:3.11.3
 
-ENV PYTHONNUNBUFFERED 1
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
-COPY requirements.txt /requirements.txt
-
-RUN apk add --upgrade --no-cache build-base linux-headers && \
-pip install --upgrade pip && \
-pip install -r /requirements.txt
-
-COPY techietoxpress/ /techietoxpress
+# Set work directory
 WORKDIR /techietoxpress
 
-RUN adduser --disabled-password --no-create-home techietoxpressadminuser
-USER techietoxpressadminuser
+# Install dependencies
+RUN pip install --upgrade pip
+COPY requirements.txt /techietoxpress/
+RUN pip install -r requirements.txt
 
-CMD ["uwsgi","--socket",":9000","--workers","4","--master","--enabled-threads","--module","techietoxpress.wsgi"]
+# Copy the Django project
+COPY . /techietoxpress/
