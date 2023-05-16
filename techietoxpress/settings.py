@@ -76,9 +76,9 @@ ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'NAME': 'techietoxpress',
+        'USER': 'techietoxpress',
+        'PASSWORD':'techietoxpress',
         'HOST': 'db',
         'PORT': 5432,
  }
