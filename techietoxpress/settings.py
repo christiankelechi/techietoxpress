@@ -44,8 +44,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # https://oauth2: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@github.com/christiankelechi/techietoxpress.git
 from pathlib import Path
 import os
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 # customer support pin
 # 2338
 
@@ -57,40 +58,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY ="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
 
 # SECRET_KEY =os.environ.get('setmeinprod')
-DEBUG = False
-ADMINS = [
- ('kc','kezechristian@gmail.com'),
-]
-ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','localhost']
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'techietoxpressdatabase',
-#         'USER':'techietoxpressdatabaseuser',
-#         'PASSWORD':'Kelechi1999!',
-#         'PORT':'',
-#         'HOST':'localhost'
-#     }
-# }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'techietoxpress',
-        'USER': 'techietoxpress',
-        'PASSWORD':'techietoxpress',
-        'HOST': 'db',
-        'PORT': 5432,
- }
-}
-# Security
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','localhost']
-
 # SECURITY WARNING: don't run with debug turned on in production!
 # dev mode
 # DEBUG = True
@@ -162,7 +133,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'techietoxpress.wsgi.application'
 
-
+DATABASES = {
+    'default': dj_database_url.parse("postgres://kc:qQt31MNsC8BLwXVRV82SSJ0LFDVmh6ii@dpg-chokebik728ivvtld5m0-a.oregon-postgres.render.com/codeblazestudyappdb")
+    }
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # development
@@ -216,11 +189,11 @@ USE_TZ = True
 # STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'),]
 # production stage
 STATIC_URL = "/static/"
-
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
 MEDIA_URL= "/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 # STATIC_ROOT='/vol/web/static'
-STATIC_ROOT=os.path.join(BASE_DIR,'static')
+
 # Note: Replace 'supersecure.codes' with your domain
 # STATIC_ROOT = '/root/techietoxpress/static'
 # STATICFILES_DIRS = [BASE_DIR / "static"]
