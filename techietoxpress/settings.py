@@ -60,8 +60,8 @@ SECRET_KEY ="django-insecure-)llyy_56vbb(#(xi@z8(qkcamhiva4e%65gbq2f&d@8tn53)5x"
 # SECRET_KEY =os.environ.get('setmeinprod')
 
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','localhost']
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['techietoxpress.com','www.techietoxpress.com','74.208.95.231','localhost']
 # SECURITY WARNING: don't run with debug turned on in production!
 # dev mode
 # DEBUG = True
