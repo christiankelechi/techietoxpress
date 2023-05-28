@@ -133,9 +133,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'techietoxpress.wsgi.application'
 
+# DATABASES = {
+#     'default': dj_database_url.parse("postgres://kc:qQt31MNsC8BLwXVRV82SSJ0LFDVmh6ii@dpg-chokebik728ivvtld5m0-a.oregon-postgres.render.com/codeblazestudyappdb")
+#     }
+
 DATABASES = {
-    'default': dj_database_url.parse("postgres://kc:qQt31MNsC8BLwXVRV82SSJ0LFDVmh6ii@dpg-chokebik728ivvtld5m0-a.oregon-postgres.render.com/codeblazestudyappdb")
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'codenxdm_techietoxpressdb',
+        'USER':'codenxdm_techietoxpressuser',
+        'PASSWORD':'Kelechi1999!',
+        'PORT':'3306',
+        'HOST':'localhost'
     }
+}
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # development
