@@ -22,7 +22,7 @@ class Post(models.Model):
     created=models.DateField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
     # tags = Tagg
-    tags = TaggableManager()
+    # tags = TaggableManager()
 
     class Meta:
         ordering=['-publish']

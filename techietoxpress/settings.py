@@ -91,7 +91,7 @@ INSTALLED_APPS = [
     'cpa',
     
     # thirdparty app
-    'taggit'
+    # 'taggit'
 ]
 
 
@@ -133,20 +133,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'techietoxpress.wsgi.application'
 
-# DATABASES = {
-#     'default': dj_database_url.parse("postgres://kc:qQt31MNsC8BLwXVRV82SSJ0LFDVmh6ii@dpg-chokebik728ivvtld5m0-a.oregon-postgres.render.com/codeblazestudyappdb")
-#     }
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'codenxdm_techietoxpressdb',
-        'USER':'codenxdm_techietoxpressuser',
-        'PASSWORD':'Kelechi1999!',
-        'PORT':'3306',
-        'HOST':'localhost'
+    'default': dj_database_url.parse("postgres://kc:U3xeQR3rSs5B8mtwjKwZ5wmT1kk3znxT@dpg-chst0gu4dad9mucu66ug-a.oregon-postgres.render.com/techietoxpressdb")
     }
-}
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'codenxdm_techietoxpressdb',
+#         'USER':'codenxdm_techietoxpressuser',
+#         'PASSWORD':'Kelechi1999!',
+#         'PORT':'3306',
+#         'HOST':'localhost'
+#     }
+# }
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # development
