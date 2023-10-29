@@ -133,9 +133,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'techietoxpress.wsgi.application'
 
-DATABASES = {
-    'default': dj_database_url.parse("postgres://kc:U3xeQR3rSs5B8mtwjKwZ5wmT1kk3znxT@dpg-chst0gu4dad9mucu66ug-a.oregon-postgres.render.com/techietoxpressdb")
-    }
+# DATABASES = {
+#     'default': dj_database_url.parse("postgres://kc:U3xeQR3rSs5B8mtwjKwZ5wmT1kk3znxT@dpg-chst0gu4dad9mucu66ug-a.oregon-postgres.render.com/techietoxpressdb")
+#     }
 
 # DATABASES = {
 #     'default': {
@@ -150,12 +150,12 @@ DATABASES = {
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # development
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 
